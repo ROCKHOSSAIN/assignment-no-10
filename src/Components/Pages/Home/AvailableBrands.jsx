@@ -1,29 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AvailableBrands = () => {
     const brands = [
-        {
-            brandName: "Lamborginni",
+        {   index:1,   
+            brandName: "Lamborghini",
             imageUrl: "https://i.ibb.co/G2WyNtq/lamborginni.jpg"
         },
-        {
+        {   index:2,
             brandName: "BMW",
             imageUrl: "https://i.ibb.co/Ns3s8kj/bmw.jpg"
         },
-        {
-            brandName: "Mercedes-Benz",
+        {   index:3,
+            brandName: "MercedesBenz",
             imageUrl: "https://i.ibb.co/ZJTV91b/marcedes.jpg"
         },
-        {
+        {   index:4,
             brandName: "Ford",
             imageUrl: "https://i.ibb.co/5GrmGJS/ford.jpg"
         },
-        {
+        {   index:5,
             brandName: "Tesla",
             imageUrl: "https://i.ibb.co/mF8FHSw/tesla2.jpg"
         },
-        {
-            brandName: "Rolls-Royce",
+        {   index:6,
+            brandName: "RollsRoyce",
             imageUrl: "https://i.ibb.co/FWQQPzc/Rolls.jpg"
         }
     ];
@@ -37,7 +38,8 @@ const AvailableBrands = () => {
                 //     <h2 className="text-xl font-bold mb-2">{brand.brandName}</h2>
                 //     <img src={brand.imageUrl} alt={brand.brandName} className="w-full" />
                 // </div>
-                <div key={index}>
+
+                <Link key={index} to={`/brandName/${brand.brandName}`}>
                     <div className="card shadow-xl">
                         <figure><img className='h-[400px] w-[500px]'  src={brand.imageUrl} alt="Shoes" /></figure>
                         <div className="card-body">
@@ -45,11 +47,12 @@ const AvailableBrands = () => {
                             
                         </div>
                     </div>
-                </div>
+                </Link>
 
 
             ))}
         </div>
+
         </div>
 
     );

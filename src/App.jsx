@@ -9,6 +9,7 @@ import Login from "./Components//Pages/Login/Login";
 import AddProduct from "./Components/Pages/AddProduct/AddProduct";
 import MyCart from "./Components/Pages/MyCart/MyCart";
 import PrivateRoute from "./Components/Provider/PrivateRoute";
+import BrandDetails from "./Components/Pages/BrandDetails/BrandDetails";
 const CarRoutes = createBrowserRouter([
   {
     path: "/",
@@ -21,7 +22,7 @@ const CarRoutes = createBrowserRouter([
       },
       {
         path:"/addProduct",
-        element:<AddProduct></AddProduct>,
+        element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
       },
       {
         path:"/myCart",
@@ -34,6 +35,11 @@ const CarRoutes = createBrowserRouter([
       {
         path:"/login",
         element:<Login></Login>
+      },
+      {
+        path: "/brandName/:brandName", 
+        loader:()=>fetch('http://localhost:5000/allcar'),
+        element: <BrandDetails></BrandDetails>
       }
     ]
 
