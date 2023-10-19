@@ -1,12 +1,24 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext)
     const handleregister=(e)=>{
+        e.preventDefault();
         const form = e.target;
         const name = form.name.value
         const email = form.email.value; 
         const password = form.password.value; 
-        console.log(name,email,password)
+        console.log(name,email,password);
+        createUser(email,password)
+        .then(result=>{
+            console.log(result.user)
+            console.log('registered')
+        })
+        .catch(error=>{
+            console.error(error)
+        })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -38,7 +50,7 @@ const Register = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>
-            <p className='text-base font-bold'>Do you have any account? <Link to='/signin'>Login</Link></p>
+            <p className='text-xs md:text-base font-semibold flex justify-between'>Do you have any account? <Link to='/login'><span className=' hover:border-b-2 border-blue-500 '> Login here!!</span></Link></p>
           </form>
         </div>
       </div>

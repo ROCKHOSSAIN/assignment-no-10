@@ -2,7 +2,7 @@
 const PackagesCars = () => {
     return (
         <div className='py-44'>
-            <h1 className='text-center text-2xl font-poppins font-semibold  text-blue-500 mb-20'>Featured Cars</h1>
+            <h1 className='text-center text-5xl font-poppins font-semibold  text-blue-500 mb-20'>Featured Cars</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
 
             <div  className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-yellow-800 dark:hover:bg-gray-700">
