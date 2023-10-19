@@ -1,9 +1,10 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
     const {createUser} = useContext(AuthContext)
+    const [registerError,setregisterError] = useState(null)
     const handleregister=(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -11,6 +12,16 @@ const Register = () => {
         const email = form.email.value; 
         const password = form.password.value; 
         console.log(name,email,password);
+        if(password.length<6){
+            setregisterError('password is less than 6')
+        }
+        if(!/[A-Z]/.test(password)){
+            setregisterError('password has to be one capital letter')
+        }
+        if(!/[@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password)){
+            setregisterError('password has to be one special character')
+        }
+
         createUser(email,password)
         .then(result=>{
             console.log(result.user)
@@ -50,6 +61,9 @@ const Register = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>
+            {
+                registerError && <p className='text-red-700 font-semibold'>{registerError}</p>
+            }
             <p className='text-xs md:text-base font-semibold flex justify-between'>Do you have any account? <Link to='/login'><span className=' hover:border-b-2 border-blue-500 '> Login here!!</span></Link></p>
           </form>
         </div>
