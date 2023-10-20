@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .banner{
-    background-image: url('/images/mq.jpg');
+background-image: url('/images/mq.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;

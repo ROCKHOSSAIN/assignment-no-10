@@ -18,7 +18,7 @@ const MyCart = () => {
     
    
     return (
-        <div>
+        <div className='grid grid-cols-1 md:grid-cols-2 container mx-auto  gap-10 md:gap-20'>
         {noFound ? (
             <p>{noFound}</p>
         ) : (

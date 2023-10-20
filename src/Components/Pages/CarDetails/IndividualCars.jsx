@@ -42,9 +42,7 @@ const IndividualCars = ({showDetailCars}) => {
             <h1 className='text-xl md:text-5xl '>{rating} Star</h1>
             <h2 className='text-xl font-semibold'>Price: ${price}</h2>
             <h2 className='text-xl md:w-1/2'>{description}</h2>
-            <Link to={`/myCart/${_id}`}>
             <button onClick={()=>handleAddToCart(_id)} className='p-5 bg-purple-500 text-white font-poppins md:w-1/2 mt-10'>Add To Cart</button>
-            </Link>
             </div>
             </div>
         </div>
