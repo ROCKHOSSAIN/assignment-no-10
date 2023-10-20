@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import IndividualCars from './IndividualCars';
+import Advertisement from '../Advertisements/Advertisement';
 
 const CarDetails = () => {
     const {id} = useParams();

@@ -1,4 +1,3 @@
-import React from 'react';
 
 const IndividualCars = ({showDetailCars}) => {
     const {name, brandName, type, price, photo, rating, description} = showDetailCars

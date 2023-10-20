@@ -12,6 +12,7 @@ import PrivateRoute from "./Components/Provider/PrivateRoute";
 import BrandDetails from "./Components/Pages/BrandDetails/BrandDetails";
 import CarDetails from "./Components/Pages/CarDetails/CarDetails";
 import CarUpdate from "./Components/Pages/CarUpdate/CarUpdate";
+import Advertisement from "./Components/Pages/Advertisements/Advertisement";
 const CarRoutes = createBrowserRouter([
   {
     path: "/",
@@ -41,7 +42,7 @@ const CarRoutes = createBrowserRouter([
       {
         path: "/brandName/:brandName", 
         loader:()=>fetch('http://localhost:5000/allcar'),
-        element:<PrivateRoute><BrandDetails></BrandDetails></PrivateRoute> 
+        element:<PrivateRoute><BrandDetails></BrandDetails></PrivateRoute>,
       },
       {
         path:"carDetails/:id",
@@ -51,7 +52,7 @@ const CarRoutes = createBrowserRouter([
       {
         path:"/updateCar/:id",
         loader:({params})=>fetch(`http://localhost:5000/allcar/${params.id}`),
-        element:<CarUpdate></CarUpdate>,
+        element:<PrivateRoute><CarUpdate></CarUpdate></PrivateRoute>,
       },
     ]
 
