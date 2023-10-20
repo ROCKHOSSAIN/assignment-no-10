@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const BrandCards = ({ brandCars }) => {
-    const { name, brandName, type, price, photo, rating } = brandCars
+    const { name, brandName, type, price, photo, rating,_id } = brandCars
     return (
         <div >
             <div className="card card-compact  bg-base-100 shadow-xl">
@@ -19,8 +21,13 @@ const BrandCards = ({ brandCars }) => {
                     <p className="text-xl font-poppins">{rating} Star</p>
                     </div>
                     <div className="card-actions justify-between">
-                        <button className="btn btn-primary">Description</button>
+                      <Link to={`/carDetails/${_id}`}>
+                      <button className="btn btn-primary">Details</button>
+                      </Link>  
+                      <Link to={`/updateCar/${_id}`}>
                         <button className="btn btn-primary">Update</button>
+                      </Link>  
+
                     </div>
                 </div>
             </div>

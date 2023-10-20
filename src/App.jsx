@@ -10,6 +10,8 @@ import AddProduct from "./Components/Pages/AddProduct/AddProduct";
 import MyCart from "./Components/Pages/MyCart/MyCart";
 import PrivateRoute from "./Components/Provider/PrivateRoute";
 import BrandDetails from "./Components/Pages/BrandDetails/BrandDetails";
+import CarDetails from "./Components/Pages/CarDetails/CarDetails";
+import CarUpdate from "./Components/Pages/CarUpdate/CarUpdate";
 const CarRoutes = createBrowserRouter([
   {
     path: "/",
@@ -39,8 +41,18 @@ const CarRoutes = createBrowserRouter([
       {
         path: "/brandName/:brandName", 
         loader:()=>fetch('http://localhost:5000/allcar'),
-        element: <BrandDetails></BrandDetails>
-      }
+        element:<PrivateRoute><BrandDetails></BrandDetails></PrivateRoute> 
+      },
+      {
+        path:"carDetails/:id",
+        loader:()=>fetch('http://localhost:5000/allcar'),
+        element:<PrivateRoute><CarDetails></CarDetails></PrivateRoute>
+      },
+      {
+        path:"/updateCar/:id",
+        loader:({params})=>fetch(`http://localhost:5000/allcar/${params.id}`),
+        element:<CarUpdate></CarUpdate>,
+      },
     ]
 
   },
