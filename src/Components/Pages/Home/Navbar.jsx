@@ -16,7 +16,7 @@ const Navbar = () => {
     const links = <>
         <li  className='text-lg font-poppins font-medium text-white'><NavLink to='/'>Home</NavLink></li>
         <li className='text-lg font-poppins font-medium text-white'><NavLink to='/addProduct'>Add Product</NavLink></li>
-        <li className='text-lg font-poppins font-medium text-white'><NavLink to='/myCart'>MyCart</NavLink></li>
+        <li className='text-lg font-poppins font-medium text-white'><NavLink to='/myCart/:id'>MyCart</NavLink></li>
 
     </>
     return (
