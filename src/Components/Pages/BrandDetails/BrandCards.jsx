@@ -18,7 +18,7 @@ const BrandCards = ({ brandCars }) => {
                     <div className="flex  mx-auto gap-10 md:gap-32">
 
                     <p className="text-xl font-poppins">{type}</p>
-                    <p className="text-xl font-poppins">{rating} Star</p>
+                    <p className="text-xl font-poppins">{rating} <ion-icon name="star-outline"></ion-icon></p>
                     </div>
                     <div className="card-actions justify-between">
                       <Link to={`/carDetails/${_id}`}>

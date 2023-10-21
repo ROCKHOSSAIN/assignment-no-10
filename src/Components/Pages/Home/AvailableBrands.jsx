@@ -31,7 +31,7 @@ const AvailableBrands = () => {
 
     return (
         <div className='py-20'>
-            <h1 className='text-center text-4xl font-poppins mb-10'>Available Brands</h1>
+            <h1 className='text-center text-sky-400 text-4xl font-poppins mb-10'>Available Brands</h1>
         <div className="grid  grid-rows-1 md:grid-cols-3 gap-10">
             {brands.map((brand, index) => (
                 // <div key={index} className="bg-white p-4 shadow-md">
@@ -43,7 +43,7 @@ const AvailableBrands = () => {
                     <div className="card shadow-xl">
                         <figure><img className='h-[400px] w-[500px]'  src={brand.imageUrl} alt="Shoes" /></figure>
                         <div className="card-body">
-                            <h2 className="card-title text-center font-poppins">{brand.brandName}</h2>   
+                            <h2 className="card-title text-center font-poppins  text-sky-400 font-semibold">{brand.brandName}</h2>   
                             
                         </div>
                     </div>
