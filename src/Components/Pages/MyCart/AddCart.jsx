@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AddCart = ({ cart }) => {
-    const { photo,name, brandName, type, price, description } = cart
+    const { photo, name, brandName, type, price, description } = cart
     return (
         <div className='py-20'>
             <div className=" bg-gray-300 shadow-xl image-full">
@@ -11,7 +11,8 @@ const AddCart = ({ cart }) => {
                     <p>{brandName}</p>
                     <p>{description}</p>
                 </div>
-            </div>        </div>
+            </div>
+        </div>
     );
 };
 

@@ -14,7 +14,7 @@ const AddProduct = () => {
 
         console.log(name, brandName, type, price, photo, rating, description);
         const newCar = { name, brandName, type, price, photo, rating, description }
-        fetch('http://localhost:5000/allcar', {
+        fetch('https://assignment-no-10-server-three.vercel.app/allcar', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -1,17 +1,17 @@
 import {
   createBrowserRouter,
 } from "react-router-dom";
-import MainLayout from "./Components/Pages/Home/MainLayout";
-import ErrorPage from "./Components/Pages/ErrorPage/ErrorPage";
-import Home from "./Components/Pages/Home/Home";
-import Register from "./Components/Pages/Register/Register";
 import Login from "./Components//Pages/Login/Login";
 import AddProduct from "./Components/Pages/AddProduct/AddProduct";
-import MyCart from "./Components/Pages/MyCart/MyCart";
-import PrivateRoute from "./Components/Provider/PrivateRoute";
 import BrandDetails from "./Components/Pages/BrandDetails/BrandDetails";
 import CarDetails from "./Components/Pages/CarDetails/CarDetails";
 import CarUpdate from "./Components/Pages/CarUpdate/CarUpdate";
+import ErrorPage from "./Components/Pages/ErrorPage/ErrorPage";
+import Home from "./Components/Pages/Home/Home";
+import MainLayout from "./Components/Pages/Home/MainLayout";
+import MyCart from "./Components/Pages/MyCart/MyCart";
+import Register from "./Components/Pages/Register/Register";
+import PrivateRoute from "./Components/Provider/PrivateRoute";
 const CarRoutes = createBrowserRouter([
   {
     path: "/",
@@ -28,7 +28,7 @@ const CarRoutes = createBrowserRouter([
       },
       {
         path:"/myCart/:id",
-        loader:()=>fetch('http://localhost:5000/myCart'),
+        loader:()=>fetch('https://assignment-no-10-server-three.vercel.app/myCart'),
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
         
       },
@@ -42,17 +42,17 @@ const CarRoutes = createBrowserRouter([
       },
       {
         path: "/brandName/:brandName", 
-        loader:()=>fetch('http://localhost:5000/allcar'),
+        loader:()=>fetch('https://assignment-no-10-server-three.vercel.app/allcar'),
         element:<PrivateRoute><BrandDetails></BrandDetails></PrivateRoute>,
       },
       {
         path:"carDetails/:id",
-        loader:()=>fetch('http://localhost:5000/allcar'),
+        loader:()=>fetch('https://assignment-no-10-server-three.vercel.app/allcar'),
         element:<PrivateRoute><CarDetails></CarDetails></PrivateRoute>
       },
       {
         path:"/updateCar/:id",
-        loader:({params})=>fetch(`http://localhost:5000/allcar/${params.id}`),
+        loader:({params})=>fetch(`https://assignment-no-10-server-three.vercel.app/allcar/${params.id}`),
         element:<PrivateRoute><CarUpdate></CarUpdate></PrivateRoute>,
       },
     ]

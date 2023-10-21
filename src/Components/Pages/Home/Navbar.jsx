@@ -14,10 +14,6 @@ const Navbar = () => {
             icon: 'moon',
             text: 'dark',
         },
-        {
-            icon: 'desktop-outline',
-            text: 'system',
-        },
     ]
     useEffect(() => {
         switch (theme) {
@@ -77,11 +73,7 @@ const Navbar = () => {
                     {
                         user ?
                             <>
-                                <div>
-                                    <div>
-
-                                    </div>
-                                </div>
+                                
                                 <span className='text-xs md:text-base text-white'>{user.displayName ? user.displayName : 'Rocky'}</span>
                                 <span><img className='w-[30] md:w-[60px] m-0 md:m-2' src={user.photoURL ? user.photoURL : "https://i.ibb.co/yBYsTYG/avatar-removebg-preview.png"} alt="" /></span>
                                 <button onClick={handleSignOut} className='text-xs md:text-lg font-poppins font-medium p-1 md:p-3  bg-white text-black'>Logout</button>
@@ -93,7 +85,7 @@ const Navbar = () => {
                             </Link>
 
                     }
-
+ 
                     <div className='duration-100 dark:bg-slate-900 bg-gray-100 rounded'>
 
                         {
@@ -107,7 +99,7 @@ const Navbar = () => {
                         }
 
 
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>

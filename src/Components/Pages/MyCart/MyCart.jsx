@@ -1,9 +1,15 @@
 import { useLoaderData } from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import AddCart from './AddCart';
+import { useContext } from "react";
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const MyCart = () => {
+    const {user} = useContext(AuthContext)
     const loadedCarts = useLoaderData()
+    console.log(user.email)
+    console.log(loadedCarts.currentPerson,'another')
+
     const [carts,setcarts] = useState(loadedCarts)
     console.log(loadedCarts)
     const [noFound,setnoFound] =useState(null)

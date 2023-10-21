@@ -1,8 +1,18 @@
-# React + Vite
+----Top Features of this website-----
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+->This is  fully a responsive website
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+->This website will be a fantastic user experience in terms of UI design
+
+
+->Only an authorized user will able to add product of Car
+
+
+->After logging user can easily make any product of his/her choices list by clicking Add To Cart
+
+
+->In this website there is a option of dark-light theme toggling so that user can change the theme of UI and  it will be a great experience.
+
+
+->User can Update any car info based on their their requirements

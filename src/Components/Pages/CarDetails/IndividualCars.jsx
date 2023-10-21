@@ -1,20 +1,34 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../Provider/AuthProvider";
 import swal from 'sweetalert';
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const IndividualCars = ({showDetailCars}) => {
     const {user} = useContext(AuthContext)
-    const email = user.email
+    console.log(user.email)
     const {name, brandName, type, price, photo, rating, description,_id} = showDetailCars
+   
 
     const handleAddToCart=(_id)=>{
-        fetch(`http://localhost:5000/myCart/${_id}`,{
+    const currentPerson = user.email
+        const cart ={
+            currentPerson,
+            name,
+             brandName,
+             type,
+             price,
+             photo,
+             rating,
+             description,
+        
+
+        }
+        fetch(`https://assignment-no-10-server-three.vercel.app/myCart/${_id}`,
+        {
             method:'POST',
             headers:{
                 'content-type':'application/json'
             },
-            body:JSON.stringify(showDetailCars)
+            body:JSON.stringify(cart)
         })
         .then(res => res.json())
             .then(data => {
