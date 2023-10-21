@@ -12,6 +12,7 @@ import MainLayout from "./Components/Pages/Home/MainLayout";
 import MyCart from "./Components/Pages/MyCart/MyCart";
 import Register from "./Components/Pages/Register/Register";
 import PrivateRoute from "./Components/Provider/PrivateRoute";
+import AddCart from "./Components/Pages/MyCart/AddCart";
 const CarRoutes = createBrowserRouter([
   {
     path: "/",
@@ -27,11 +28,12 @@ const CarRoutes = createBrowserRouter([
         element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
       },
       {
-        path:"/myCart/:id",
+        path:"/myCart",
         loader:()=>fetch('https://assignment-no-10-server-three.vercel.app/myCart'),
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
         
       },
+      
       {
         path:"/register",
         element:<Register></Register>

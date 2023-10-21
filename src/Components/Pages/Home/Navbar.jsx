@@ -1,32 +1,11 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext} from 'react';
 import { NavLink, Link } from 'react-router-dom'
 import { AuthContext } from '../../Provider/AuthProvider';
-const Navbar = () => {
+import { FaMoon } from "react-icons/fa";
+
+const Navbar = ({handleThemeSwitch}) => {
     const { user, logout } = useContext(AuthContext);
-    const [theme, setTheme] = useState("system");
-    const element = document.documentElement
-    const options = [
-        {
-            icon: 'sunny',
-            text: 'light',
-        },
-        {
-            icon: 'moon',
-            text: 'dark',
-        },
-    ]
-    useEffect(() => {
-        switch (theme) {
-            case 'dark':
-                element.classList.add('dark');
-                break;
-            case 'light':
-                element.classList.remove('dark');
-                break;
-            default:
-                break;
-        }
-    }, [theme])
+  
     const handleSignOut = () => {
 
         logout()
@@ -40,12 +19,12 @@ const Navbar = () => {
     const links = <>
         <li className='text-lg font-poppins font-medium text-white'><NavLink to='/'>Home</NavLink></li>
         <li className='text-lg font-poppins font-medium text-white'><NavLink to='/addProduct'>Add Product</NavLink></li>
-        <li className='text-lg font-poppins font-medium text-white'><NavLink to='/myCart/:id'>MyCart</NavLink></li>
+        <li className='text-lg font-poppins font-medium text-white'><NavLink to='/myCart'>MyCart</NavLink></li>
 
     </>
     return (
         <div>
-            <div className="navbar  dark:text-gray-600 dark:bg-black duration-100">
+            <div className="navbar bg-black">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -85,21 +64,8 @@ const Navbar = () => {
                             </Link>
 
                     }
- 
-                    <div className='duration-100 dark:bg-slate-900 bg-gray-100 rounded'>
-
-                        {
-                            options?.map(opt => (
-                                <button key={opt.text}
-                                    onClick={() => setTheme(opt.text)}
-                                    className={`w-8 h-8 leading-9 text-xl rounded-full m-1 ${theme === opt.text && 'text-sky-600'}`}>
-                                    <ion-icon name={opt.icon}></ion-icon>
-                                </button>
-                            ))
-                        }
-
-
-                    </div> 
+                    <button className='ml-0 md:ml-2 p-1  md:p-2 border-2  text-gray-400 z-20 text-xl md:text-2xl' onClick={handleThemeSwitch}><FaMoon></FaMoon></button>
+                   
                 </div>
             </div>
         </div>

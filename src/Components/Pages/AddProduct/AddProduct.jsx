@@ -66,7 +66,7 @@ const AddProduct = () => {
                             <div className="select">
                                 <select
                                     name="brandName"
-                                    className="select select-bordered w-full"
+                                    className=" select-bordered w-full"
                                 >
                                     <option value="">Select Brand</option>
                                     <option value="Lamborghini">Lamborghini</option>
