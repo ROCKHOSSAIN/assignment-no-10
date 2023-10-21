@@ -25,7 +25,7 @@ const BrandDetails = () => {
     return (
         <div >
             <Advertisement></Advertisement>
-            <div className='grid grid-cols-1 md:grid-cols-2 container mx-auto py-20 gap-20'>
+            <div className='grid grid-cols-1 md:grid-cols-2 container mx-auto py-20 gap-20' >
 
                 {noFound ? (
                     <p className='mx-auto text-red-600 text-3xl'>{noFound}</p>
