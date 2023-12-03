@@ -37,8 +37,8 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-
-
+    
+    
                 fetch(`https://assignment-no-10-server-three.vercel.app/myCart/${_id}`, {
                     method: 'DELETE'
                 })
@@ -46,7 +46,7 @@ const MyCart = () => {
                     .then(data => {
                         console.log(data);
                         if (data.deletedCount > 0) {
-
+    
                             const remainingUsers = carts.filter(user => user._id !== _id)
                             setcarts(remainingUsers)
                             Swal.fire(
@@ -56,10 +56,10 @@ const MyCart = () => {
                             )
                         }
                     })
-
+    
             }
         })
-    }
+}
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 container mx-auto  gap-10 md:gap-20 py-10'>
             {carts.length===0 ? (

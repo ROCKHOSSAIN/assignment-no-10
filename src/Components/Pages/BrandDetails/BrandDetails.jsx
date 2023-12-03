@@ -11,9 +11,10 @@ const BrandDetails = () => {
     const [noFound, setnoFound] = useState(null)
 
     const { brandName } = useParams();
-
+    console.log(brandName)
     useEffect(() => {
         const filterData = loadedData.filter(item => item.brandName === brandName)
+        console.log(filterData)
         setBrand(filterData)
         if (filterData.length > 0) {
             setbrandload(loadedData)

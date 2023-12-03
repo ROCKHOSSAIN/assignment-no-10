@@ -34,11 +34,6 @@ const AvailableBrands = () => {
             <h1 className='text-center text-sky-400 text-4xl font-poppins mb-10'>Available Brands</h1>
         <div className="grid  grid-rows-1 md:grid-cols-3 gap-10">
             {brands.map((brand, index) => (
-                // <div key={index} className="bg-white p-4 shadow-md">
-                //     <h2 className="text-xl font-bold mb-2">{brand.brandName}</h2>
-                //     <img src={brand.imageUrl} alt={brand.brandName} className="w-full" />
-                // </div>
-
                 <Link key={index} to={`/brandName/${brand.brandName}`}>
                     <div className="card shadow-xl">
                         <figure><img className='h-[400px] w-[500px]'  src={brand.imageUrl} alt="Shoes" /></figure>

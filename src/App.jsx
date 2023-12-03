@@ -3,7 +3,7 @@ import {
 } from "react-router-dom";
 import Login from "./Components//Pages/Login/Login";
 import AddProduct from "./Components/Pages/AddProduct/AddProduct";
-import BrandDetails from "./Components/Pages/BrandDetails/BrandDetails";
+import BrandDetails from "./Components/Pages/BrandDetails/BrandDetails";  
 import CarDetails from "./Components/Pages/CarDetails/CarDetails";
 import CarUpdate from "./Components/Pages/CarUpdate/CarUpdate";
 import ErrorPage from "./Components/Pages/ErrorPage/ErrorPage";
